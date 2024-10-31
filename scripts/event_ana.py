@@ -1,0 +1,22 @@
+import re
+
+def process_event_text(t):
+    t = re.sub(r'\n{2,}', '\n', t)
+    t = re.sub(r' {2,}', ' ', t)
+    t = re.sub(r' \,', ',', t)
+    t = re.sub(r'^\. ', '', t)
+    t = re.sub(r'\,\n', ',', t)
+    t = re.sub(r'\,(\w)', r', \1', t)
+    t = re.sub(r'([^\.])\n', r'\1,', t)
+    
+    return t
+
+t = ". Mùa xuân, tháng giêng,\ntruy tôn mẹ sinh là nguyên phi Anh Tư làm Minh Từ hoàng thái phi.\n\n\nTháng 2            , đãi yến các qusan ở điện Thiên An, ban thưởng theo thứ bậc khác nhau.\nPhong công chúa thiên Ninh là Lạng Quốc thái trưởng công chúa, đổi tên là Quốc Hinh.\nPhong người tôn thất là Sư Hiền làm Cung Chính vương, Nguyên Đán làm tư đồ, Nguyên Uyên\nlàm phủ quân tướng quân.\nBỏ phép cắt chân bãi bồi. Xóa lệnh kiểm kê tài sản.\nTrước đây, các nhà vương  hầu, công chúa lập điền trang ở ven sông thì đất phù sa mới\nbồi đều thuộc về người chủ [điền trang]. Thái hậu Chiêu Từ [nhân đó] mới lập thành phép cắt chân bãi\nbồi (bnghĩa là cắt lấy những đất mới bồi).\nNhững người quyền quý chết thì tài sản đều thuộc về con cháu họ. Dụ Tông mới có lệnh kiểm kê\n(nghĩa là những thứ gì quý báu phải đem nộp vào nhà nước), đều là do bọn bề tôi tham lam vơ vét xui\nvua làm chuyện đó. Đến đây đều bãi bỏ cả.\nTháng 3 nhuận, Chiêm Thành vào cướp, từ cửa biển Đại An1 tiến thẳng đến kinh sư. Du binh\n[của giặc] đến bến Thái Tổ (nay là Phục Cổ)2. Vua đi thuyền sang Đông Ngàn lánh chúng.\nNgày 27, giặc ùa vào thành, đốt phá cung điện, cướp lấy con gái , ngọc lụa đem về.\nChiêm Thành sở dĩ sang cướp là vì mạ Nhật Lễ chạy trốn sang nước ấy, xúi giục chúng vào cướp\nđể báo thù cho Nhật Lễ. Bấy giờ thái bình đã lâu ngày, thành quách biênm cương không có phòng bị,\ngiặc đến không có quân nào ngăn được. Chúng đốt trụi cung điện, nhà cửa. Thư tịch, sổ sách do vậy\nsạch không. Nhà nước  từ đó sinh ra nhiều chuyện.\nSử thần Ngô Sĩ Liên nói: Không có nước địch làm mối lo bên ngoài thì nước hay\nbị mất, đó là điều răn từ xưa đến nay. Chiêm Thành với ta, đời đời là cừu thù, triều Trần\nchả lẽ lại không biết mà phòng bị trước hay sao? Chỉ vì lòng người sinh biếng trễ, phép\nnước bị buông lơi, đã qua nhiều năm tháng, việc phòng thủ biên cương bị triệt bỏ, nên\nđến nỗi ấy. Giặc vào bờ cõi mà biên thành thất thủ, giặc tới kinh đô mà cấm binh chống\nlại thì còn nước thế nào được! Dụ Tông vốn quen chơi bời, cố nhiên là chẳng đáng kể.\nNghệ Tông thì bản thân đã trải nhiều biến cố mà không nghĩ tới việc đó, há chẳng phải\nlà chỉ chăm lo văn nghệ mà không trông nom gì đến võ lược ư?.\nMùa hạ, tháng 4, lập em (vua) là Cung Tuyên đại vương Kính làm hoàng thái tử, soạn \nchương Hoằng huấn ban cho. Phong vợ cả hoàng thái tử là Lê thị làm hoàng thái tử phi.\nTháng 5, lấy người họ ngoại là Lê Quý Ly làm khu mật viện đại sứ.\nHai chị em bà cô của Quý Ly, Minh Tông đều lấy làm cung nhân. Một bà sinh ra vua, đó là bà\nMinh Từ. Một bà sinh ra Duệ Tông, đó là bà Đôn Từ. Cho nên vua khi mới lên ngôi rất tín nhiệm Quý Ly.\nLại đem em gái mới góa chồng là công chúa Huy Ninh gả cho ông ta (Huy Ninh trước là vợ của tôn thất\nNhân Vinh, Nhân Vinh bị Nhật Lễ giết hại).\nSử thần Ngô Sĩ Liên nói: Nhân Vinh chết vì thù nước, Huy Ninh để tang chồng\nmới được 6 tháng mà vua đã đem gả cho Quý Ly. Thế là làm hỏng nhân luân bắt đầu từ\nvua, mà kẻ làm chồng, người làm vợ cũngkhông có nhân tâm. Phá bỏ lẽ chồng vợ, đảo\nloạn đạo tam cương, thì làm sao mà chẳng sinh loạn?.\n\n\n\n1\nCửa Đại An: sau đổi là cửa Liêu, huyện Đại An, nay là huyện Nghĩa Hưng, tỉnh Hà Nam Ninh.\n2\nPhường Phục Cổ: Ở khoảng phó Nguyễn Du, Hà Nội hiện nay. Nếu đời Trần ở đó có bến thì chắc là có một nah1nh sông Hồng\nchảy qua đó, nối với hồ Thuyền Quang.\n266                                  Đại Việt Sử Ký Toàn Thư - Bản Kỷ - Quyển VII\n\n\n Xuống chiếu rằng xây dựng cung thất cốt sao cho giản dị, môc mạc, chỉ lấy các tản quan\ntôn thất phục dịch, không phiền nhiễu đến dân.\nMùa thu, tháng 8, sai Lê Quý Ly đi Nghệ An để chiêu tập dân chúng, vỗ yên nơi biên giới.\nTháng 9, gia phong Lê Quý Ly làm Trung Tuyên quốc thượng hầu.\nMùa đông, tháng 10, lấy tu sử Phan Nghĩa làm Lễ bộ lang trung, soạn định Quốc triều thông chế\nvà các lễ nghi.\nRa lệnh cho những người có chức tước phải khai báo để làm thành sổ sách. Nhưng dân gian giả\ndối quá lắm, lấy không làm có rất nhiều.\nTháng 12, truy phong mẹ sinh hoàng thái tử là Sung Viên1 Lê thị làm Quang Hiến thần phi.\n"
+
+with open('input.txt', 'w', encoding='utf-8') as file:
+    file.write(t)
+    
+t = process_event_text(t)
+
+with open('output.txt', 'w', encoding='utf-8') as file:
+    file.write(t)

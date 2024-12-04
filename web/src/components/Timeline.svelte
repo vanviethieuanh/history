@@ -1,5 +1,5 @@
 <script>
-	import * as data from '../../../../outputs/flat.json';
+	import * as data from '../../../outputs/flat.json';
 	import { getSexagenaryCycle } from '../util/year';
 
 	const Records = data.default;

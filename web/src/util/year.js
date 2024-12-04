@@ -62,5 +62,9 @@ export const getSexagenaryCycle = (year) => {
         { cn: "癸亥", vn: "Quý Hợi" },
     ]
 
-    return sexagenary_cycle[(year - 3) % 60]
+    if (year > 0) {
+        return sexagenary_cycle[(year - 3) % 60]
+    } else {
+        return sexagenary_cycle[(Math.abs(year - 1) + 2) % 60]
+    }
 }

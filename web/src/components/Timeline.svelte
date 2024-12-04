@@ -1,6 +1,6 @@
 <script>
-	import * as data from '../../../outputs/flat.json';
-	import { getCycleByYear, generateYears } from '../lib/year';
+	import * as data from '../../../../outputs/flat.json';
+	import { getSexagenaryCycle } from '../util/year';
 
 	const Records = data.default;
 	const yearsRecorded = Object.keys(Records)
@@ -16,7 +16,7 @@
 	$: eventPlain = viewEvent.event.plain;
 	$: records = viewEvent.records;
 	$: volume = viewEvent.volume;
-	$: record = viewEvent.record
+	$: record = viewEvent.record;
 
 	let pane;
 
@@ -54,7 +54,7 @@
 						class="text-lg ease-out transition-all duration-500"
 						style="opacity:{viewPoint === index ? '80%' : '20%'};"
 					>
-						{getCycleByYear(year).vn}
+						{getSexagenaryCycle(year).vn}
 					</p>
 					<p
 						class="text-xl ease-out transition-all duration-500"
@@ -66,7 +66,7 @@
 						class="text-lg ease-out transition-all duration-500"
 						style="opacity:{viewPoint === index ? '80%' : '20%'};"
 					>
-						{getCycleByYear(year).cn}
+						{getSexagenaryCycle(year).cn}
 					</p>
 				</div>
 			{/each}
